@@ -1,0 +1,21 @@
+$TTL 30
+@ IN SOA ns1.asubee.local. hostmaster.asubee.local. (
+    2022012401 ; serial
+    1d         ; refresh 1hr
+    3h         ; retry 15min
+    3d         ; expire 1w
+    3h         ; min 24hr
+)
+
+      IN NS  ns1.asubee.local.
+10    IN PTR ahv01.asubee.local.
+11    IN PTR ahv02.asubee.local.
+12    IN PTR ahv03.asubee.local.
+13    IN PTR cvm01.asubee.local.
+14    IN PTR cvm02.asubee.local.
+15    IN PTR cvm03.asubee.local.
+16    IN PTR element.asubee.local.
+17    IN PTR central.asubee.local.
+
+
+

@@ -1,0 +1,4 @@
+# 作業ディレクトリ
+REPO_DIR="/home/asuka/nutanix_mgmt_configuration"
+
+
