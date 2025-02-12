@@ -5,7 +5,7 @@ CONF_FILE=/etc/named.conf
 ZONE_DIR=/var/named
 NAMED_CONF=./conf/named.conf
 
-# 設定ファイルの作成
+# 設定ファイルの検証（エラーチェック）
 sudo named-checkconf "$NAMED_CONF"
 
 if [ $? -ne 0 ]; then
@@ -15,6 +15,7 @@ else
     echo "Configuration file $NAMED_CONF is valid."
 fi
 
+# 設定ファイルのコピーとパーミッション設定
 sudo cp -r ./conf/named.conf $CONF_FILE
 sudo chown root:named $CONF_FILE
 sudo chmod 640 $CONF_FILE
@@ -22,6 +23,7 @@ sudo chmod 640 $CONF_FILE
 # zoneファイルの作成
 ZONE_FILES=$(ls ./conf/zonefile)
 
+# zoneファイルの検証（チェック）
 for FILE in $ZONE_FILES; do
   if [[ "$FILE" == *.rev ]]; then
     # revファイルの場合の処理
@@ -39,6 +41,7 @@ for FILE in $ZONE_FILES; do
   fi
 done
 
+# 設定ファイルのコピーとパーミッション設定
 sudo cp -r ./conf/zonefile/* $ZONE_DIR/
 
 for FILE in $ZONE_FILES; do
