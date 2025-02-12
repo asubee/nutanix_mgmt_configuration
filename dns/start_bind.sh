@@ -20,10 +20,10 @@ sudo cp -r ./conf/named.conf $CONF_FILE
 sudo chown root:named $CONF_FILE
 sudo chmod 640 $CONF_FILE
 
-# zoneファイルの作成
-ZONE_FILES=$(ls ./conf/zonefile)
 
 # zoneファイルの検証（チェック）
+ZONE_FILES=$(ls ./conf/zonefile)
+
 for FILE in $ZONE_FILES; do
   if [[ "$FILE" == *.rev ]]; then
     # revファイルの場合の処理
