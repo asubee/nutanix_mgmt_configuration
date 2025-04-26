@@ -1,0 +1,13 @@
+version: '2'
+
+# nginx reverse proxy
+
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - "443:443"
+    restart: always
