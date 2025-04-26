@@ -30,3 +30,6 @@ sudo dnf install --disablerepo=* --enablerepo=local* -y $1
 # すべてのファイルが正常にインストールされたかを検証
 
 echo "$1 has been configured and started successfully."
+
+# ローカルリポジトリを削除
+sudo rm -rf /etc/yum.repos.d/local-pkg.repo

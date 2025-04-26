@@ -7,21 +7,22 @@
 
 まず、オンライン環境にて、以下スクリプトを実行する。なお、各フォルダの中にある`download_bind.sh`や`download_squid.sh`を実行してもよい。実行すると、依存関係にあるすべてのパッケージが`./pkg`にダウンロードされ、このフォルダがローカルリポジトリとして設定される。
 
-```
 （実行コマンド） ./download_package.sh <ダウンロードしたいパッケージ名>
 今回は、dns（bind）とリバースプロキシ（squid）をダウンロードする為、以下コマンドを実行する。
 
-$ ./download_package.sh bind
-$ ./download_package.sh squid
+```
+./download_package.sh bind
+./download_package.sh squid
 ```
 
 続いて、ダウンロードしたファイル諸々をオフライン環境（今回構築するサーバ）に持って行き、以下スクリプトを実行することでパッケージをインストールする。
-```
+
 （実行コマンド） ./install_package.sh <インストールしたいパッケージ名>
 今回は、dns（bind）とリバースプロキシ（squid）をインストールする為、以下コマンドを実行する。
 
-$ ./install_package.sh bind
-$ ./install_package.sh squid
+```
+./install_package.sh bind
+./install_package.sh squid
 ```
 
 
